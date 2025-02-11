@@ -134,7 +134,7 @@ def create_ui():
     global alarm_frame, song_var, song_menu
     root = tk.Tk()
     root.title("Alarm Clock")
-    root.geometry("400x300")
+    root.geometry("600x300")
 
     load_alarms()
     load_songs()
