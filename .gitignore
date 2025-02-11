@@ -1,0 +1,3 @@
+# Ignoring AlarmSounds Folder and alarms.json since those are auto created for the user when they run the program
+Alarm_Sounds/
+/alarms.json
