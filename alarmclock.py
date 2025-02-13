@@ -93,7 +93,7 @@ def play_alarm(song_path):
 def check_alarms():
     """Continuously checks the time and triggers alarms."""
     while True:
-        current_time = datetime.datetime.now().strftime("%H:%M:%S")
+        current_time = datetime.datetime.now().strftime("%H:%M")
         for alarm in alarms:
             if alarm["active"] and current_time >= alarm["time"]:
                 threading.Thread(target=play_alarm, args=(alarm["song"],)).start()
