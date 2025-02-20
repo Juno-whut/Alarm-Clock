@@ -86,7 +86,7 @@ def play_alarm(song_path):
     
     pygame.mixer.music.load(song_path)
     pygame.mixer.music.set_volume(1.0)
-    pygame.mixer.music.play()
+    pygame.mixer.music.play(loops=-1)
 
     gradually_increase_volume()
 
@@ -94,11 +94,11 @@ def play_alarm(song_path):
 def check_alarms():
     """Continuously checks the time and triggers alarms."""
     while True:
-        current_time = datetime.datetime.now().strftime("%H:%M")
+        current_time = datetime.datetime.now().strftime("%H:%M:%S")
         for alarm in alarms:
-            if alarm["active"] and current_time >= alarm["time"]:
+            if alarm["active"] and current_time == alarm["time"]:
                 threading.Thread(target=play_alarm, args=(alarm["song"],)).start()
-        time.sleep(5)
+        time.sleep(1)
 
 def toggle_alarm(index):
     """Toggles the active state of an alarm."""
