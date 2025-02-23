@@ -86,9 +86,10 @@ def play_alarm(song_path):
     
     pygame.mixer.music.load(song_path)
     pygame.mixer.music.set_volume(1.0)
+    gradually_increase_volume()
     pygame.mixer.music.play(loops=-1)
 
-    gradually_increase_volume()
+    
 
 
 def check_alarms():
